@@ -5,10 +5,10 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.stack.Children
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.fade
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stackAnimation
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
-import navigation.RootComponent
+import common.navigation.RootComponent
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import screens.EditScreen
-import screens.ResultScreen
+import feature.edit.presentation.EditScreen
+import feature.result.presentation.ResultScreen
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable

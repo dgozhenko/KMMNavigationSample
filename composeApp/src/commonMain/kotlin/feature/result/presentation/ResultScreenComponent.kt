@@ -1,4 +1,4 @@
-package navigation
+package feature.result.presentation
 
 import com.arkivanov.decompose.ComponentContext
 

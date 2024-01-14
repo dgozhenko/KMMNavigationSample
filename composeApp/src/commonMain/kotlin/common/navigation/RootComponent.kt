@@ -1,8 +1,10 @@
-package navigation
+package common.navigation
 
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.router.stack.*
+import feature.edit.presentation.EditScreenComponent
+import feature.result.presentation.ResultScreenComponent
 import kotlinx.serialization.Serializable
 
 class RootComponent(
@@ -25,9 +27,13 @@ class RootComponent(
     ): Child {
         return when (configuration) {
             Configuration.EditScreen -> {
-                Child.EditScreen(EditScreenComponent(componentContext = context, onNavigateToResultScreen = { text ->
-                    navigation.pushNew(Configuration.ResultScreen(text = text))
-                }))
+                Child.EditScreen(
+                    EditScreenComponent(
+                        componentContext = context,
+                        onNavigateToResultScreen = { text ->
+                            navigation.pushNew(Configuration.ResultScreen(text = text))
+                        })
+                )
             }
             is Configuration.ResultScreen -> Child.ResultScreen(
                 ResultScreenComponent(
