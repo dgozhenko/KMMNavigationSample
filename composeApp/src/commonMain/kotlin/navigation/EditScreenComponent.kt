@@ -14,7 +14,9 @@ class EditScreenComponent(
     fun onEvent(event: EditScreenEvent) {
         when(event) {
             EditScreenEvent.ClickSendButton -> onNavigateToResultScreen(text.value)
-            is EditScreenEvent.UpdateText -> TODO()
+            is EditScreenEvent.UpdateText -> {
+                _text.value = event.text
+            }
         }
     }
 }

@@ -19,7 +19,7 @@ fun App(rootComponent: RootComponent) {
             stack = childStack,
             animation = stackAnimation(fade())
         ) { child ->
-            when(val instance = child.instance) {
+            when (val instance = child.instance) {
                 is RootComponent.Child.EditScreen -> EditScreen(component = instance.component)
                 is RootComponent.Child.ResultScreen -> ResultScreen(component = instance.component)
             }
